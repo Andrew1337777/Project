@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public float timeScaleMax;
 
     private bool isGround;
-    private Rigidbody2D rigidbody2D;
+    private new Rigidbody2D rigidbody2D;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private void Start()
@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        BonusCheck();
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -55,34 +54,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void ScaleBonus()
-    {
-        timeScale = timeScaleMax;
-    }
-
-    private void BonusCheck()
-    {
-        if (timeScale > 0)
-        {
-            transform.localScale = new Vector3(1.5f, 1.5f, 1f);
-            timeScale--;
-        }
-        else
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-
-
-        }
-    }
-
-
     public void AddCoin(int count)
     {
         score += count;
         scoreText.text = score.ToString();
-
-
-
     }
 
     private void Jump()
