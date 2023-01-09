@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public float timeScaleMax;
 
     private bool isGround;
+    public bool isRightSide = true;
     private new Rigidbody2D rigidbody2D;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -27,7 +28,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         scoreText.text = score.ToString();
-
+       
 
         spawn = GameObject.FindWithTag("Respawn");
         transform.position = spawn.transform.position;
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
             isGround = false;
             Jump();
         }
-    }
+    }   
 
     public void AddCoin(int count)
     {
