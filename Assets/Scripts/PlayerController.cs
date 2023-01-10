@@ -35,6 +35,31 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetAxis("Horizontal") != 0)
+        {
+            if (Input.GetAxis("Horizontal") > 0)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else if (Input.GetAxis("Horizontal") < 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+            animator.SetInteger("AnimState", 1);
+        }
+        else
+        {
+            animator.SetInteger("AnimState", 0);
+        }
+
+        if (isGround == true)
+        {
+        
+        }
+            else
+            {
+            animator.SetInteger("AnimState", 2);
+            }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {

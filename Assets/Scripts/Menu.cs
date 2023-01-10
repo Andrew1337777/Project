@@ -6,8 +6,7 @@ public class Menu : MonoBehaviour
 {
     public void Play(int index)
     {
-        SceneManager.LoadScene(index
-            );
+        SceneManager.LoadScene(index);
     }
 
     // Update is called once per frame
